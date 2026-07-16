@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transkriptör — Video Özet Asistanı</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dark-theme">
+
+    <!-- Drag overlay (tüm ekran) -->
+    <div class="drag-overlay" id="drag-overlay">
+        <i data-lucide="image-plus"></i>
+        <h2>Ekran görüntüsünü buraya bırak</h2>
+    </div>
+
+    <div class="chat-app">
+
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="bot-identity">
+                <div class="bot-avatar">
+                    <i data-lucide="sparkles"></i>
+                </div>
+                <div>
+                    <h1>Transkriptör</h1>
+                    <p class="bot-status"><span class="status-dot"></span> çevrimiçi</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="process-timer" id="process-timer" aria-live="polite">
+                    <i data-lucide="timer"></i>
+                    <span id="timer-label">Hazır</span>
+                    <strong id="timer-elapsed">0:00</strong>
+                </div>
+                <button class="icon-btn" id="theme-toggle-btn" title="Tema değiştir">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mesaj listesi -->
+        <main class="messages" id="messages">
+            <div class="msg bot">
+                <div class="msg-avatar"><i data-lucide="sparkles"></i></div>
+                <div class="bubble">
+                    <p>Selam! 👋 YouTube <strong>ekran görüntüsünü yapıştır</strong> (Ctrl+V) veya link girerek analiz et.</p>
+                    <p>💡 <strong>Çoklu Video Arama ve Türkçe Özetleme:</strong></p>
+                    <p class="hint-line">· Arama yapmak için: <code>/ara [kelimeler]</code> veya <code>/discover [kelimeler]</code></p>
+                    <p class="hint-line">· Kanal incelemek için: <code>/kanal [kanal_adresi]</code></p>
+                    <p class="hint-line">Bulunan videoları tek tıkla Türkçe özetleyebilirsiniz.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Giriş çubuğu -->
+        <footer class="composer">
+            <div class="composer-inner">
+                <button class="icon-btn attach-btn" id="attach-btn" title="Görsel yükle">
+                    <i data-lucide="paperclip"></i>
+                </button>
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <input type="text" id="chat-input" placeholder="Ekran görüntüsünü yapıştır (Ctrl+V) veya YouTube linki yaz..." autocomplete="off">
+                <button class="send-btn" id="send-btn" title="Gönder">
+                    <i data-lucide="arrow-up"></i>
+                </button>
+            </div>
+            <p class="composer-hint">Görsel: Ctrl+V, sürükle-bırak veya 📎 &nbsp;·&nbsp; Türkçe video özetleri</p>
+        </footer>
+    </div>
+
+    <!-- Toast bildirimleri -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="{{ url_for('static', filename='js/app.js', v='20260716-result-count') }}"></script>
+</body>
+</html>

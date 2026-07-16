@@ -1,0 +1,5 @@
+flask
+requests
+yt-dlp
+youtube-transcript-api
+python-dotenv

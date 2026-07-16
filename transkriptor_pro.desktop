@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Transkriptör Pro
+Comment=YouTube Video Transkript ve AI Özet Asistanı
+Exec=/home/em-rhan/Downloads/model/transkriptor_pro/run.sh
+Icon=video-x-generic
+Terminal=true
+Categories=Utility;Development;

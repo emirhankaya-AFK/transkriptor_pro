@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database
+*.db
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Local generated data and downloaded model files
+models/
+exports/
+
+# OS files
+.DS_Store
+Thumbs.db
