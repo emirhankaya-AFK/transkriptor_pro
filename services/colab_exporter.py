@@ -104,3 +104,6 @@ def get_all_exports():
     # Sort by created time descending
     exports_list.sort(key=lambda x: x['created_at'], reverse=True)
     return exports_list
+
+# Backward-compatible name used by the smoke test and older callers.
+export_to_colab = export_video_data
